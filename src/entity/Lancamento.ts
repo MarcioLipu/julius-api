@@ -25,4 +25,6 @@ export class Lancamento {
 
     @ManyToOne(() => Usuario)
     usuario: Usuario;
+
+   
 }

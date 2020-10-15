@@ -20,4 +20,19 @@ export class Usuario {
 
     @OneToMany(() => Lancamento, lancamento => lancamento.usuario)
     lancamentos: Lancamento[];
+
+    @OneToMany(()=>Editar,editar=>editar.Usuario)
+    editar:Editar[];
+
+    @OneToMany(()=>Delete,delete=>Delete.Usuario)
+    delete:delete[];
+
+    @OneToMany(()=>Valor,valor=>valor.Valor)
+    valor:valor[];
+
+    @OneToMany(()=>ValorPos,valorPos=>valorPos.ValorPos)
+    valorPos:ValorPos[];
+
+    @OneToMany(()=>ValorNeg,valorNeg=>valorNeg.ValorNeg)
+    valorNeg:ValorNeg[];
 }

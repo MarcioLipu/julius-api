@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { getManager } from "typeorm";
 import { Usuario } from "../entity/Usuario";
 
@@ -24,4 +25,21 @@ export class UsuarioController {
         });
         return usuario.lancamentos;
     }
+
+async editar(id:number){
+    const usuarioEditado=await getManager().save(Usuario);
+    return usuarioEditado;
+
+});
+const del = async (req: Request, res: Response) => {
+    return res.json(await getDel(Usuario).delete(req.params.id));
+  };
+  const ValorPos = async (req: Request, res: Response) => {
+    return res.json(await getValorPos(Usuario).ValorPos(req.params.id));
+  };
+  const ValorNeg = async (req: Request, res: Response) => {
+    return res.json(await getValorNeg(Usuario).ValorNeg(req.params.id));
+  };
+
 }
+

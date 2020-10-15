@@ -1,3 +1,4 @@
+import { connect } from 'net';
 import { createConnection } from 'typeorm';
 
 export const conectarServidorNoBD = async () => {
@@ -7,4 +8,5 @@ export const conectarServidorNoBD = async () => {
     process.on('SIGINT', () => {
         conexao.close().then(() => console.log('Conexão com o BD fechada'));
     });
+    
 };

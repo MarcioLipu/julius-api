@@ -22,6 +22,7 @@ routerUsuario.post('/', async (req, res) => {
 routerUsuario.get('/', async (req, res) => {
     const usuarios = await usuarioCtrl.recuperarTodos();
     res.json(usuarios);
+    
 });
 
 /**
@@ -29,6 +30,19 @@ routerUsuario.get('/', async (req, res) => {
  */
 routerUsuario.get('/lancamentos/:idUsuario', async (req, res) => {
     const idUsuario = parseInt(req.params.idUsuario);
-    const lancamentos = await usuarioCtrl.recuperarLancamentosDoUsuario(idUsuario);
+    const lancamentos = await usuarioCtrl.recuperarLancamentosDoUsuario
+    (idUsuario);
     res.json(lancamentos);
+});
+/** 
+     * Editando o lançamento cujo id seja igual a :id
+     */
+
+
+routerUsuario.put('/lancamentos/:idUsuario',async(req,res)=>{
+    const idUsuario=parseInt(req.params.idUsuario);
+    const alterar=await usuarioCtrl.EditadoUsuario(idUsuario);
+    res.json(Editar);
+
+
 });
