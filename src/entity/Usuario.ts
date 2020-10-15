@@ -27,7 +27,7 @@ export class Usuario {
     @OneToMany(()=>Delete,delete=>Delete.Usuario)
     delete:delete[];
 
-    @OneToMany(()=>Valor,valor=>valor.Valor)
+    @OneToMany(()=>Valor,valor=>valor.valor)
     valor:valor[];
 
     @OneToMany(()=>ValorPos,valorPos=>valorPos.ValorPos)
