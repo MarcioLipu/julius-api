@@ -23,3 +23,4 @@ async ValorPos(ValorPos:ValorPos){
         const valor=await getManager().save(ValorNeg);
         return valor;
 }
+}

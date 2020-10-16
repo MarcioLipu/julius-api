@@ -46,3 +46,15 @@ routerUsuario.put('/lancamentos/:idUsuario',async(req,res)=>{
 
 
 });
+routerUsuario.get('/lancamentos/:idUsuario',async(req,res)=>{
+    const idUsuario=parseInt(req.params.idUsuario);
+    const valor=await usuarioCtrl.ValorPos(valor);
+    res.json(valor);
+});
+
+routerUsuario.get('/lancamentos/:idUsuario',async(req,res)=>{
+    const idUsuario=parseInt(req.params.idUsuario);
+    const valor=await usuarioCtrl.ValorNeg(valor);
+    res.json(valor);
+});
+

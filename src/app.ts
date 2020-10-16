@@ -5,7 +5,7 @@ import * as logger from 'morgan';
 
 import { conectarServidorNoBD } from './config/db';
 import { routerUsuario } from './route/usuario';
-import { routerLancamento } from './route/lancamento';
+import { routerLancamento } from './routes/lancamento';
 
 /**
  * Cria a aplicação

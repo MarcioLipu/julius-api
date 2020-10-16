@@ -32,6 +32,23 @@ routerLancamento.post('/', async (req, res) => {
      }else{
          res.status(404).json({message:'Usuario não subscrito'})
 
-     }
-     })
+     });
+     routerLancamento.get('/', async (req, res) => {
+        const {  valor } = req.body;
+        const usuario = await usuarioCtrl.ValorPos(valor);
+        if (valor>0) {
+            const valor = new ValorPos(valor);
+            const valorPos = await lancamentoCtrl.ValorPos(valor);
+            res.json(valor);
+     
 });
+routerLancamento.get('/', async (req, res) => {
+    const { valor } = req.body;
+    const usuario = await usuarioCtrl.ValorNeg(Lancamento);
+    if (valor<0) {
+        const valor = new ValorNeg(valor);
+        const valorNeg = await lancamentoCtrl.ValorNeg(valor);
+        res.json(valorNeg)
+    });
+    
+}
